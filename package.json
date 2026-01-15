@@ -8,7 +8,8 @@
     "baml:generate": "baml-cli generate",
     "dev": "vite",
     "build": "pnpm run baml:generate && vite build",
-    "preview": "vite preview"
+    "preview": "PORT=3001 node .output/server/index.mjs",
+    "start": "PORT=3001 node .output/server/index.mjs"
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.7",
