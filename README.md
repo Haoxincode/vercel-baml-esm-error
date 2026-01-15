@@ -4,7 +4,50 @@
 
 Minimal reproduction for BAML ESM compatibility issues. **Reproducible locally** - no Vercel deployment required.
 
-## The Problem
+---
+
+## ✅ This Branch: Bun Runtime Workaround
+
+**Branch: `test/bun-runtime`**
+
+This branch demonstrates that using **Bun runtime** instead of Node.js avoids the ESM `__filename` error.
+
+### Why Bun Works
+
+Bun provides built-in compatibility for CommonJS globals (`__filename`, `__dirname`, `require`) in ESM modules, unlike Node.js which strictly enforces ESM semantics.
+
+### How to Use
+
+```bash
+# Clone this branch
+git clone -b test/bun-runtime https://github.com/Haoxincode/vercel-baml-esm-error.git
+cd vercel-baml-esm-error
+
+# Install & build with Bun
+bun install
+bun run build
+
+# Run - NO ERROR!
+bun run start
+```
+
+### Vercel Deployment
+
+This branch includes `vercel.json` configured with Bun runtime:
+
+```json
+{
+  "bunVersion": "1.x"
+}
+```
+
+Deploy this branch to Vercel and it should work without the ESM error.
+
+> **Note**: See the `main` branch to reproduce the original error with Node.js/pnpm.
+
+---
+
+## The Problem (main branch)
 
 When Nitro bundles server code as ESM, BAML fails to load due to missing `__filename` variable.
 
