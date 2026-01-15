@@ -1,0 +1,44 @@
+{
+  "name": "vercel-baml-esm-error",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Reproduction of BAML ESM error when deploying TanStack Start to Vercel",
+  "scripts": {
+    "baml:generate": "baml-cli generate",
+    "dev": "vite",
+    "build": "pnpm run baml:generate && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^3.0.7",
+    "@ai-sdk/react": "^3.0.33",
+    "@base-ui/react": "^1.0.0",
+    "@boundaryml/baml": "^0.217.0",
+    "@radix-ui/react-use-controllable-state": "^1.2.2",
+    "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/react-router": "1.147.3",
+    "@tanstack/react-start": "1.149.2",
+    "ai": "^6.0.31",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.562.0",
+    "motion": "^12.26.1",
+    "nanoid": "^5.1.6",
+    "nitro": "3.0.1-alpha.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "shiki": "^3.21.0",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "shadcn": "^3.6.2",
+    "typescript": "~5.8.2",
+    "vite": "8.0.0-beta.5"
+  }
+}

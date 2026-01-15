@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "paths": {
+      "~/*": ["./src/*"],
+      "@baml": ["./baml_client/index.ts"],
+      "@baml/*": ["./baml_client/*"]
+    }
+  },
+  "include": ["src/**/*", "db/**/*", "lib/**/*", "baml_client/**/*", "baml_src/**/*"]
+}
