@@ -7,4 +7,6 @@ generator target {
   output_type "typescript"
   // Version
   version "0.217.0"
+  // Module format - use ESM for Vercel/Nitro compatibility
+  module_format "esm"
 }
